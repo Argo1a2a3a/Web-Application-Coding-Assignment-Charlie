@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block header %}
+<h1>Shark Reports</h1>
+{% if g.user %}
+<a class="action" href="{{ url_for('report.create') }}">New Report</a>
+{% endif %} {% endblock %} {% block content %} {% for r in reports %}
+<article class="post">
+  <header>
+    <div>
+      <h1>{{ r.shark_type }}</h1>
+      <div class="about">
+        at {{ r.beach }} on {{ r.created.strftime('%Y-%m-%d') }} by {{
+        r.username }}
+      </div>
+    </div>
+
+    {% if g.user and g.user.id == r.author_id %}
+    <a class="action" href="{{ url_for('report.update', id=r.id) }}">Edit</a>
+    {% endif %}
+  </header>
+
+  <p class="body">Size: {{ r.size }}</p>
+</article>
+
+{% if not loop.last %}
+<hr />
+{% endif %} {% endfor %} {% endblock %}

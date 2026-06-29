@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block header %}
+<h1>New Shark Report</h1>
+{% endblock %} {% block content %}
+<form method="post">
+  <label for="shark_type">Shark Type</label>
+  <select name="shark_type" id="shark_type">
+    {% for s in sharks %}
+    <option>{{ s }}</option>
+    {% endfor %}
+  </select>
+
+  <label for="beach">Beach</label>
+  <select name="beach" id="beach">
+    {% for b in beaches %}
+    <option>{{ b }}</option>
+    {% endfor %}
+  </select>
+
+  <label for="size">Size (optional)</label>
+  <input name="size" id="size" />
+
+  <input type="submit" value="Save" />
+</form>
+{% endblock %}

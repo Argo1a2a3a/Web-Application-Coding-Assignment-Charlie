@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block header %}
+<h1>Profile</h1>
+{% endblock %} {% block content %}
+<form method="post">
+  <label for="preferred_beach">Preferred Beach</label>
+  <select name="preferred_beach" id="preferred_beach">
+    {% for b in beaches %}
+    <option
+      value="{{ b }}"
+      {%
+      if
+      g.user.preferred_beach=""
+      ="b"
+      %}selected{%
+      endif
+      %}
+    >
+      {{ b }}
+    </option>
+    {% endfor %}
+  </select>
+
+  <input type="submit" value="Save" />
+</form>
+{% endblock %}
