@@ -7,7 +7,7 @@ from flaskr.db import get_db
 bp = Blueprint("Report", __name__)
 
 
-@bp.route("/main")
+@bp.route("report.main")
 def index():
     db = get_db()
     posts = db.execute(
