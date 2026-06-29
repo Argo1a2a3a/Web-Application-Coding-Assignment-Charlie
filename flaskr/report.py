@@ -14,8 +14,9 @@ def cleanup_old_reports(db):
     db.commit()
 
 
-@bp.route("/")
+@bp.route("/main")
 def index():
+    print("In report index")
     db = get_db()
     cleanup_old_reports(db)
 
@@ -37,6 +38,7 @@ def index():
 @bp.route("/create", methods=("GET", "POST"))
 @login_required
 def create():
+    print("In create")
     if request.method == "POST":
         shark_type = request.form["shark_type"]
         beach = request.form["beach"]
