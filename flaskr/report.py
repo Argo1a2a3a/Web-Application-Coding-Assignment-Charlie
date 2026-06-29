@@ -14,7 +14,7 @@ def cleanup_old_reports(db):
     db.commit()
 
 
-@bp.route("/main")
+@bp.route("/")
 def index():
     print("In report index")
     db = get_db()
