@@ -3,7 +3,7 @@ from werkzeug.exceptions import abort
 from .auth import login_required
 from .db import get_db
 
-bp = Blueprint("report", __name__, url_prefix="/report")
+bp = Blueprint("report", __name__)
 
 SHARK_TYPES = ["Great White", "Tiger Shark", "Hammerhead", "Bull Shark"]
 BEACHES = ["Bondi Beach", "Manly Beach", "Coogee Beach", "Palm Beach"]
