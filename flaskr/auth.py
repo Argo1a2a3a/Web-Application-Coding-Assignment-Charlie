@@ -15,7 +15,35 @@ from .db import get_db
 
 bp = Blueprint("auth", __name__, url_prefix="/auth")
 
-BEACHES = ["Bondi Beach", "Manly Beach", "Coogee Beach", "Palm Beach"]
+BEACHES = [
+    "Palm Beach",
+    "Whale Beach",
+    "Avalon Beach",
+    "Bilgola Beach",
+    "Newport Beach",
+    "Bungan Beach",
+    "Mona Vale Beach",
+    "Mona Vale Basin",
+    "Warriewood Beach",
+    "Turimetta Beach",
+    # Narrabeen / Collaroy system
+    "North Narrabeen Beach",
+    "Narrabeen Beach",
+    "South Narrabeen Beach",
+    "Collaroy Beach",
+    # Long Reef area
+    "Fishermans Beach",
+    "Long Reef Beach",
+    # Dee Why
+    "North Dee Why Beach",
+    "Dee Why Beach",
+    "South Dee Why Beach",
+    # Curl Curl
+    "North Curl Curl Beach",
+    "South Curl Curl Beach",
+    # Freshwater
+    "Freshwater Beach",
+]
 
 
 @bp.route("/register", methods=("GET", "POST"))

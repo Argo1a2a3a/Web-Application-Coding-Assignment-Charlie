@@ -15,5 +15,6 @@ CREATE TABLE report (
     shark_type TEXT NOT NULL,
     beach TEXT NOT NULL,
     size TEXT,
+    danger_level TEXT NOT NULL,
     FOREIGN KEY (author_id) REFERENCES user(id) ON DELETE CASCADE
 );

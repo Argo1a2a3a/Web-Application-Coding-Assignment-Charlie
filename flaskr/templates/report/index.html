@@ -1,15 +1,33 @@
-{% extends 'base.html' %} {% block header %}
+{% extends 'base.html' %}
+
+{% block header %}
 <h1>Shark Reports</h1>
+
+<form method="get" action="{{ url_for('report.index') }}">
+  <input
+    type="text"
+    name="q"
+    placeholder="Search reports..."
+    value="{{ query }}"
+  />
+  <input type="submit" value="Search">
+</form>
+
+<p>Total Reports: {{ count }}</p>
+
 {% if g.user %}
 <a class="action" href="{{ url_for('report.create') }}">New Report</a>
-{% endif %} {% endblock %} {% block content %} {% for r in reports %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% for r in reports %}
 <article class="post">
   <header>
     <div>
       <h1>{{ r.shark_type }}</h1>
       <div class="about">
-        at {{ r.beach }} on {{ r.created.strftime('%Y-%m-%d') }} by {{
-        r.username }}
+        at {{ r.beach }} on {{ r.created.strftime('%Y-%m-%d') }} by {{ r.username }}
       </div>
     </div>
 
@@ -19,8 +37,11 @@
   </header>
 
   <p class="body">Size: {{ r.size }}</p>
+  <p class="body">Danger Level: {{ r.danger_level }}</p>
 </article>
 
 {% if not loop.last %}
 <hr />
-{% endif %} {% endfor %} {% endblock %}
+{% endif %}
+{% endfor %}
+{% endblock %}
