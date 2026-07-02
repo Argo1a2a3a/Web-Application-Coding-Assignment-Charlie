@@ -5,7 +5,7 @@
   <label for="shark_type">Shark Type</label>
   <select name="shark_type" id="shark_type">
     {% for s in sharks %}
-    <option {% if report.shark_type="" ="s" %}selected{% endif %}>
+    <option {% if report.shark_type== s %}selected{% endif %}>
       {{ s }}
     </option>
     {% endfor %}
@@ -14,7 +14,7 @@
   <label for="beach">Beach</label>
   <select name="beach" id="beach">
     {% for b in beaches %}
-    <option {% if report.beach="" ="b" %}selected{% endif %}>{{ b }}</option>
+    <option {% if report.beach== b %}selected{% endif %}>{{ b }}</option>
     {% endfor %}
   </select>
 

@@ -26,10 +26,16 @@ SHARK_TYPES = [
     "Porbeagle Shark",
     "Zebra Shark",
     "Cookiecutter Shark",
-    "Wobbegong",
+    "Wobbegong Shark",
     "Port Jackson Shark",
     "Carpet Shark",
     "Angel Shark",
+    "Not listed",
+    "Unknown",
+    "",
+    "",
+    "",
+    "",
 ]
 
 BEACHES = [
@@ -55,6 +61,11 @@ BEACHES = [
     "North Curl Curl Beach",
     "South Curl Curl Beach",
     "Freshwater Beach",
+    "Not listed",
+    "",
+    "",
+    "",
+    "",
 ]
 
 DANGER_LEVELS = {
@@ -77,11 +88,13 @@ DANGER_LEVELS = {
     "Port Jackson Shark": "Harmless",
     "Carpet Shark": "Harmless",
     "Angel Shark": "Harmless",
-    "Goblin Shark": "Unknown",
-    "Greenland Shark": "Unknown",
-    "Porbeagle Shark": "Unknown",
-    "Zebra Shark": "Unknown",
-    "Cookiecutter Shark": "Unknown",
+    "Goblin Shark": "Harmless",
+    "Greenland Shark": "Harmless",
+    "Porbeagle Shark": "Harmless",
+    "Zebra Shark": "Harmless",
+    "Cookiecutter Shark": "Harmless",
+    "Not listed": "Unknown",
+    "Unknown": "Unknown",
 }
 
 
